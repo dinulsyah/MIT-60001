@@ -1,7 +1,7 @@
 # Problem Set 2, hangman.py
-# Name:
-# Collaborators:
-# Time spent:
+# Name: Arif Dinulsyah Putra
+# Collaborators: -
+# Time spent: 3 Hours
 
 # Hangman Game
 # -----------------------------------
@@ -56,18 +56,18 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     1. Dari secret_word kita ambil karakter unik dari var tersebut
-    2. Jika semua karakter pada secret_word ada dalam list letter_guessed maka return 
+    2. Jika semua karakter pada secret_word ada dalam list letter_guessed maka return
        True otherwise False. okeeeee
     '''
     secret_word = set(secret_word)
     length_set = len(secret_word)
     true_char = 0
-    
+
     for letter in letters_guessed:
         for char in secret_word:
             if letter == char:
                 true_char = true_char+1
-    
+
     if true_char == length_set:
         return True
     else:
@@ -83,7 +83,7 @@ def get_guessed_word(secret_word, letters_guessed):
     2. Buat sebuah string baru dengan melakukan checking pada seluruh index yang ada
        pada secret_word e.g 'apple' check pada index 0 sampai index 4.
        jika index terdapat dalam index_list maka gabungkan string dengan karakter dari
-       index secret_word tersebut otherwise gabungkan string dengan "_ ".      
+       index secret_word tersebut otherwise gabungkan string dengan "_ ".
     '''
     index_list = list()
     length_set = len(secret_word)
@@ -91,16 +91,16 @@ def get_guessed_word(secret_word, letters_guessed):
     for letter in letters_guessed:
         for i in range(0,length_set):
             if letter == secret_word[i]:
-                index_list.append(i) 
-                
+                index_list.append(i)
+
     for i in range(0,length_set):
         if i in index_list:
             the_string = the_string + secret_word[i]
         else:
             the_string = the_string + '_ '
-    
+
     return the_string
-    
+
 def get_available_letters(letters_guessed):
     '''
     letters_guessed: list (of letters), which letters have been guessed so far
@@ -118,7 +118,7 @@ def get_available_letters(letters_guessed):
     alphabet = ''.join(alphabet)
     return alphabet
 
-    
+
 def hangman(secret_word):
     '''
     secret_word: string, the secret word to guess.
@@ -352,10 +352,8 @@ if __name__ == "__main__":
     # pass
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
-    #secret_word = choose_word(wordlist)
-    #print(secret_word)
-    hangman_with_hints(wordlist)
-    
+    # secret_word = choose_word(wordlist)
+    # hangman(wordlist)
 
 ###############
 
